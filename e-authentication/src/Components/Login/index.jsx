@@ -15,9 +15,12 @@ const SignUp = () => {
 		setData({ ...data, [input.name]: input.value });
 	};
 
-	const handleSubmit = async (e) => {
+	const handleSubmit = async (e) => 
+	{
 		e.preventDefault();
 		try {
+			console.log(data);
+			console.log("Above data is of login component");
 			const url = "http://localhost:8080/api/auth";
 			const { data: res } = await axios.post(url, data);
             localStorage.setItem("token",res.data);
