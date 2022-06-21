@@ -1,6 +1,6 @@
 import { useState } from "react";
 import axios from "axios";
-import { Link} from "react-router-dom";
+import { Link,useNavigate} from "react-router-dom";
 import styles from "./styles.module.css";
 
 const SignUp = () => {
@@ -11,7 +11,7 @@ const SignUp = () => {
 		password: "",
 	});
 	const [error, setError] = useState("");
-	const [msg,setMsg]=useState("");
+	const navigate = useNavigate();
 
 	const handleChange = ({ currentTarget: input }) => {
 		setData({ ...data, [input.name]: input.value });
@@ -21,11 +21,11 @@ const SignUp = () => {
 		e.preventDefault();
 		try {
 			console.log(data);
-			console.log("Above data is of Sign Up")
+
 			const url = "http://localhost:8080/api/users";
 			const { data: res } = await axios.post(url, data);
-			setMsg(res.message);
-			
+			navigate("/login");
+			console.log(res.message);
 		} catch (error) {
 			if (
 				error.response &&
@@ -88,8 +88,8 @@ const SignUp = () => {
 							className={styles.input}
 						/>
 						{error && <div className={styles.error_msg}>{error}</div>}
-						{msg && <div className={styles.success_msg}>{msg}</div>}
-						<button type="submit" className={styles.green_btn}>
+						
+						<button type="submit" className={styles.grey_btn}>
 							Sign Up
 						</button>
 					</form>

@@ -3,7 +3,7 @@ import axios from "axios";
 import { Link} from "react-router-dom";
 import styles from "./styles.module.css";
 
-const SignUp = () => {
+const Login = () => {
 	const [data, setData] = useState({
 		email: "",
 		password: "",
@@ -20,7 +20,7 @@ const SignUp = () => {
 		e.preventDefault();
 		try {
 			console.log(data);
-			console.log("Above data is of login component");
+			
 			const url = "http://localhost:8080/api/auth";
 			const { data: res } = await axios.post(url, data);
             localStorage.setItem("token",res.data);
@@ -62,7 +62,7 @@ const SignUp = () => {
 							className={styles.input}
 						/>
 						{error && <div className={styles.error_msg}>{error}</div>}
-						<button type="submit" className={styles.green_btn}>
+						<button type="submit" className={styles.grey_btn}>
 							Sign In
 						</button>
 					</form>
@@ -81,4 +81,4 @@ const SignUp = () => {
 	);
 };
 
-export default SignUp;
+export default Login;

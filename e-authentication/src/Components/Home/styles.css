@@ -1,0 +1,75 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto:300,400,400i,500');
+.bg{
+    height: 100vh;
+    width: 100vw;
+    margin: 0;
+    padding: 0;
+    z-index: -100;
+    position: absolute;
+    opacity: 0.96;
+}
+
+
+@media (min-width:675px) {
+  .heading{
+    font-size: 4rem;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    padding-top: 9rem;
+    padding-left: 6rem;
+    color: rgb(202 204 207)
+}
+.home_btn_login{
+  display: inline;
+  margin: 2rem;
+  margin-left: 6rem;
+  margin-right: 1.8rem;
+}
+.home_btn_signup{
+  display: inline;
+}
+}
+
+@media (max-width:675px) and (min-width:415px){
+  .heading{
+    font-size: 3rem;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    padding-top: 18rem;
+    padding-left: 6rem;
+    color: rgb(202 204 207)
+  }
+  .home_btn_login{
+    display: block;
+    margin-top: 2rem;
+    margin-left: 6rem;
+    
+  }
+  .home_btn_signup{
+    display: block;
+    margin-top: 2rem;
+    margin-left: 6rem;
+    
+  }
+  
+}
+@media (max-width:415px){
+  .heading{
+    font-size: 2rem;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    padding-top: 28rem;
+    padding-left: 4.8rem;
+    color: rgb(202 204 207)
+  }
+  .home_btn_login{
+    display: block;
+    margin-top: 2rem;
+    margin-left: 4.8rem;
+    
+  }
+  .home_btn_signup{
+    display: block;
+    margin-top: 2rem;
+    margin-left: 4.8rem;
+    
+  }
+  
+}

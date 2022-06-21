@@ -22,7 +22,7 @@
 	flex-direction: column;
 	align-items: center;
 	justify-content: center;
-	background-color: #3bb19b;
+	background-color: #1e1e1c;
 	border-top-left-radius: 10px;
 	border-bottom-left-radius: 10px;
 }
@@ -81,7 +81,7 @@
 	background-color: #5cdd5c;
 }
 .white_btn,
-.green_btn {
+.grey_btn {
 	border: none;
 	outline: none;
 	padding: 12px 0;
@@ -93,8 +93,8 @@
 	cursor: pointer;
 }
 
-.green_btn {
-	background-color: #3bb19b;
+.grey_btn {
+	background-color: #6c757d;
 	color: white;
 	margin: 10px;
 }
