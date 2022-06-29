@@ -1,7 +1,9 @@
 const router=require("express").Router();
 const {User,validate}=require("../models/user");
 const bcrypt=require("bcrypt");
-
+const Token = require("../models/token");
+const crypto = require("crypto");
+const sendEmail = require("../utils/sendEmail");
 
 router.post("/",async(req,res)=>{
     try{
@@ -17,13 +19,36 @@ router.post("/",async(req,res)=>{
         const hashPassword=await bcrypt.hash(req.body.password, salt);
     
         user=await new User({...req.body,password:hashPassword}).save();
-        
-        res.status(201).send({message:"User Created Successully"});
+        const token = await new Token({
+			userId: user._id,
+			token: crypto.randomBytes(32).toString("hex"),
+		}).save();
+		const url = `${process.env.BASE_URL}users/${user._id}/verify/${token.token}`;
+		await sendEmail(user.email, "Verify Email", url);
+        res.status(201).send({message:"An Email sent to your account please verify"});
     }
     catch(error){
         res.status(500).send({message:error.message})
 
     }
 });
+router.get("/:id/verify/:token/", async (req, res) => {
+	try {
+		const user = await User.findOne({ _id: req.params.id });
+		if (!user) return res.status(400).send({ message: "Invalid link" });
 
+		const token = await Token.findOne({
+			userId: user._id,
+			token: req.params.token,
+		});
+		if (!token) return res.status(400).send({ message: "Invalid link" });
+
+		await User.updateOne({ _id: user._id,verified: true });
+		await token.remove();
+
+		res.status(200).send({ message: "Email verified successfully" });
+	} catch (error) {
+		res.status(500).send({ message: "Internal Server Error" });
+	}
+});
 module.exports = router;

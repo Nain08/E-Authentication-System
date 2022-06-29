@@ -67,7 +67,7 @@
 	font-size: 14px;
 }
 
-.error_msg {
+.error_msg,.success_msg {
 	width: 370px;
 	padding: 15px;
 	margin: 5px 0;
@@ -76,6 +76,9 @@
 	color: white;
 	border-radius: 5px;
 	text-align: center;
+}
+.success_msg{
+	background-color: #5cdd5c;
 }
 
 .white_btn,
@@ -169,7 +172,7 @@
 		font-size: 14px;
 	}
 	
-	.error_msg{
+	.error_msg,.success_msg{
 		width: 370px;
 		padding: 15px;
 		margin: 5px 0;
@@ -179,7 +182,9 @@
 		border-radius: 5px;
 		text-align: center;
 	}
-	
+	.success_msg{
+		background-color: #5cdd5c;
+	}
 	.white_btn,
 	.grey_btn {
 		border: none;
@@ -279,7 +284,7 @@
 		font-size: 13px;
 	}
 	
-	.error_msg{
+	.error_msg,.success_msg{
 		width: 263px;
 		padding: 15px;
 		margin: 5px 0;
@@ -289,7 +294,9 @@
 		border-radius: 5px;
 		text-align: center;
 	}
-	
+	.success_msg{
+		background-color: #5cdd5c;
+	}
 	.white_btn,
 	.grey_btn {
 		border: none;
@@ -389,7 +396,7 @@
 		font-size: 13px;
 	}
 	
-	.error_msg{
+	.error_msg,.success_msg{
 		width: 250px;
 		padding: 15px;
 		margin: 5px 0;
@@ -399,7 +406,9 @@
 		border-radius: 5px;
 		text-align: center;
 	}
-	
+	.success_msg{
+		background-color: #5cdd5c;
+	}
 	.white_btn,
 	.grey_btn {
 		border: none;
@@ -487,7 +496,7 @@
 		margin: 5px 0;
 		font-size: 14px;
 	}
-	.error_msg{
+	.error_msg,.success_msg{
 		width: 370px;
 		padding: 15px;
 		margin: 5px 0;
@@ -496,6 +505,9 @@
 		color: white;
 		border-radius: 5px;
 		text-align: center;
+	}
+	.success_msg{
+		background-color: #5cdd5c;
 	}
 	.white_btn,
 	.grey_btn {
