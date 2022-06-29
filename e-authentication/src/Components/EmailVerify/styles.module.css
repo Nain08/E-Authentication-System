@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto:300,400,400i,500');
 .container {
 	width: 100vw;
 	height: 100vh;
@@ -5,16 +6,27 @@
 	align-items: center;
 	justify-content: center;
 	flex-direction: column;
+	background-color: #1e1e1c;
 }
-
-.green_btn {
+.white_btn{
 	border: none;
 	outline: none;
-	padding: 12px 0;
-	background-color: #3bb19b;
+	padding: 8px 0;
+	background-color: white;
 	border-radius: 20px;
-	width: 180px;
+	width: 115px;
 	font-weight: bold;
 	font-size: 14px;
 	cursor: pointer;
+	margin-top:20px;
+}
+.success_img{
+	height:200px;
+	width:200px;
+	padding: 0%;
+}
+.heading{
+	padding-top: 2rem;
+	font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+	color: white;
 }
